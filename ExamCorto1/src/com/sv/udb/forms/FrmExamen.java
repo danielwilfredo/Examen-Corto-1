@@ -26,6 +26,7 @@ public class FrmExamen extends javax.swing.JFrame {
      * Creates new form FrmExamen
      */
     Corto geneNum = new Corto();
+    public String gana1, gana2, gana3;
     
     public FrmExamen() {
         initComponents();
@@ -174,12 +175,22 @@ public class FrmExamen extends javax.swing.JFrame {
 
     private void btndetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndetenerActionPerformed
        jugar.stop();
+       if(gana1 == "src/Imagenes/7.png" && gana2 == "src/Imagenes/7.png" && gana3 == "src/Imagenes/7.png")
+       {
+           JOptionPane.showMessageDialog(this, "Usted Gano.");
+       }
+       else {
+           JOptionPane.showMessageDialog(this, "Siga Intentando.");
+       }
+       
         
              
     }//GEN-LAST:event_btndetenerActionPerformed
 private void Nume1()
 {
+    
     String num =  geneNum.calcNume1();
+    gana1 = num;
      ImageIcon nume1 = new ImageIcon(num);
       lblnumero1.setIcon(nume1);
       System.out.println(num);
@@ -188,6 +199,7 @@ private void Nume1()
 private void Nume2()
 {
    String num2 = geneNum.calcNume2();
+ gana2 = num2;
     ImageIcon nume2 = new ImageIcon(num2);
     lblnumero2.setIcon(nume2);
     System.out.println(num2);
@@ -196,6 +208,7 @@ private void Nume2()
 private void Nume3()
 {
     String num3 =  geneNum.calcNume3();
+     gana3 = num3;
      ImageIcon nume3 = new ImageIcon(num3);
       lblnumero3.setIcon(nume3);
       System.out.println(num3);
@@ -208,11 +221,17 @@ private void Nume3()
 
     private void btnganarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnganarActionPerformed
         String gana =  "src/Imagenes/7.png";
+        String gana2 =  "src/Imagenes/7.png";
+        String gana3 =  "src/Imagenes/7.png";
          ImageIcon ganaDor = new ImageIcon(gana);
          lblnumero1.setIcon(ganaDor);
          lblnumero2.setIcon(ganaDor);
          lblnumero3.setIcon(ganaDor);
-          JOptionPane.showMessageDialog(this, "Usted Gano.");
+            if(gana == "src/Imagenes/7.png" && gana2 == "src/Imagenes/7.png" && gana3 == "src/Imagenes/7.png")
+       {
+           JOptionPane.showMessageDialog(this, "Usted Gano.");
+       }
+          
                   
         
     }//GEN-LAST:event_btnganarActionPerformed
