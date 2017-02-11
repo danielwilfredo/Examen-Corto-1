@@ -63,6 +63,8 @@ public class FrmExamen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         btnempezar.setText("Empezar");
         btnempezar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +202,7 @@ private void Nume3()
     }
     
     private void btnempezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnempezarActionPerformed
-        
+       
    jugar.start();
     }//GEN-LAST:event_btnempezarActionPerformed
 
@@ -211,6 +213,7 @@ private void Nume3()
          lblnumero2.setIcon(ganaDor);
          lblnumero3.setIcon(ganaDor);
           JOptionPane.showMessageDialog(this, "Usted Gano.");
+                  
         
     }//GEN-LAST:event_btnganarActionPerformed
 
