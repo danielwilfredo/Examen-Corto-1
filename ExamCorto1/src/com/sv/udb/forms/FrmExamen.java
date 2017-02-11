@@ -6,22 +6,32 @@
 package com.sv.udb.forms;
 
 import com.sv.udb.clases.Corto;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.Timer;
 
 /**
  *
  * @author DanielWilfredo
  */
 public class FrmExamen extends javax.swing.JFrame {
+Timer jugar;
+int conta;
 
     /**
      * Creates new form FrmExamen
      */
     Corto geneNum = new Corto();
+    
+ 
     public FrmExamen() {
         initComponents();
         this.setLocationRelativeTo(null);
-         lblnumero1.setIcon((("com/sv/udb/img numeros/1486844620_number_1_blue.png")));
-    }
+            }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,24 +43,15 @@ public class FrmExamen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnempezar = new javax.swing.JButton();
         btndetener = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         lblnumero1 = new javax.swing.JLabel();
         lblnumero2 = new javax.swing.JLabel();
         lblnumero3 = new javax.swing.JLabel();
-        btnempezar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btndetener.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        btndetener.setText("Detener");
-
-        lblnumero1.setText("numero1");
-
-        lblnumero2.setText("numero2");
-
-        lblnumero3.setText("numero3");
-
-        btnempezar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btnempezar.setText("Empezar");
         btnempezar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,42 +59,77 @@ public class FrmExamen extends javax.swing.JFrame {
             }
         });
 
+        btndetener.setText("Detener");
+        btndetener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndetenerActionPerformed(evt);
+            }
+        });
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Numeros"));
+
+        lblnumero1.setBackground(new java.awt.Color(204, 255, 204));
+        lblnumero1.setFont(new java.awt.Font("SansSerif", 1, 60)); // NOI18N
+        lblnumero1.setForeground(new java.awt.Color(0, 102, 102));
+
+        lblnumero2.setBackground(new java.awt.Color(204, 255, 204));
+        lblnumero2.setFont(new java.awt.Font("SansSerif", 1, 60)); // NOI18N
+        lblnumero2.setForeground(new java.awt.Color(0, 102, 102));
+
+        lblnumero3.setBackground(new java.awt.Color(204, 255, 204));
+        lblnumero3.setFont(new java.awt.Font("SansSerif", 1, 60)); // NOI18N
+        lblnumero3.setForeground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(lblnumero1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(lblnumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lblnumero3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblnumero3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblnumero2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblnumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 16, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btndetener, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btndetener, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblnumero1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblnumero2)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblnumero3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblnumero1)
-                            .addComponent(lblnumero2)
-                            .addComponent(lblnumero3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btndetener, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btndetener, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,25 +143,48 @@ public class FrmExamen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btndetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndetenerActionPerformed
+
+      
+    }//GEN-LAST:event_btndetenerActionPerformed
+private void Nume1()
+{
+    String num =  geneNum.calcNume1();
+     ImageIcon nume1 = new ImageIcon(num);
+      lblnumero1.setIcon(nume1);
+      System.out.println(num);
+    
+}
+private void Nume2()
+{
+   String num2 = geneNum.calcNume2();
+    ImageIcon nume2 = new ImageIcon(num2);
+    lblnumero2.setIcon(nume2);
+    System.out.println(num2);
+    
+}
+private void Nume3()
+{
+    String num3 =  geneNum.calcNume3();
+     ImageIcon nume3 = new ImageIcon(num3);
+      lblnumero3.setIcon(nume3);
+      System.out.println(num3);
+    }
+    
     private void btnempezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnempezarActionPerformed
-        int num1 = geneNum.calcNume1();
-        int num2 = geneNum.calcNume2();
-        int num3 = geneNum.calcNume3();
-
-        if(num1 == 1)
-        {
-            lblnumero1.setIcon((("com/sv/udb/img numeros/1486844620_number_1_blue.png")));
-        }
-
+        
+        Nume1();
+        Nume2();
+        Nume3();
     }//GEN-LAST:event_btnempezarActionPerformed
 
     /**
@@ -167,6 +226,7 @@ public class FrmExamen extends javax.swing.JFrame {
     private javax.swing.JButton btndetener;
     private javax.swing.JButton btnempezar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblnumero1;
     private javax.swing.JLabel lblnumero2;
     private javax.swing.JLabel lblnumero3;

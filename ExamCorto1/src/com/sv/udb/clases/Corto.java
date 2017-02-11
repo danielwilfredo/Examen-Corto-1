@@ -15,26 +15,109 @@ public class Corto {
     
   
      public int numeAlea1;
-     public int numeAlea2;
-     public int numeAlea3;
-   
-        public int calcNume1()
-        {
+     
+        public String calcNume1()
+        {int cont;
+        String icon="";
             Random geneRand = new Random();
-            numeAlea1= geneRand.nextInt(7)+1;
-            return numeAlea1;
+           cont = numeAlea1 = geneRand.nextInt(7)+1;
+            if (cont == 1)
+            {
+                icon="src/Imagenes/1.png";
+            }
+            else if(cont ==2 )
+            {
+                 icon="src/Imagenes/2.png";
+            }
+            else if(cont==3)
+            { 
+                icon="src/Imagenes/3.png";
+            }
+            else if(cont ==4)
+            {
+                 icon="src/Imagenes/4.png";
+            }
+            else if(cont==5)
+            {
+                 icon="src/Imagenes/5.png";
+            }
+                        else if(cont==6)
+            {
+                 icon="src/Imagenes/6.png";
+            }
+            else if(cont==7)
+                    {
+                         icon="src/Imagenes/7.png";
+                    }
+            return icon;
         }
-        public int calcNume2()
-        {
+      public String calcNume2()
+        {int cont;
+        String icon="";
             Random geneRand = new Random();
-            numeAlea2= geneRand.nextInt(7)+1;
-            return numeAlea3;
+           cont = numeAlea1 = geneRand.nextInt(7)+1;
+            if (cont == 1)
+            {
+                icon="src/Imagenes/1.png";
+            }
+            else if(cont ==2 )
+            {
+                 icon="src/Imagenes/2.png";
+            }
+            else if(cont==3)
+            { 
+                icon="src/Imagenes/3.png";
+            }
+            else if(cont ==4)
+            {
+                 icon="src/Imagenes/4.png";
+            }
+            else if(cont==5)
+            {
+                 icon="src/Imagenes/5.png";
+            }
+                        else if(cont==6)
+            {
+                 icon="src/Imagenes/6.png";
+            }
+            else if(cont==7)
+                    {
+                         icon="src/Imagenes/7.png";
+                    }   return icon;
         }
-        public int calcNume3()
-        {
+      public String calcNume3()
+        {int cont;
+        String icon="";
             Random geneRand = new Random();
-            numeAlea2= geneRand.nextInt(7)+1;
-            return numeAlea2;
+           cont = numeAlea1 = geneRand.nextInt(7)+1;
+            if (cont == 1)
+            {
+                icon="src/Imagenes/1.png";
+            }
+            else if(cont ==2 )
+            {
+                 icon="src/Imagenes/2.png";
+            }
+            else if(cont==3)
+            { 
+                icon="src/Imagenes/3.png";
+            }
+            else if(cont ==4)
+            {
+                 icon="src/Imagenes/4.png";
+            }
+            else if(cont==5)
+            {
+                 icon="src/Imagenes/5.png";
+            }
+                        else if(cont==6)
+            {
+                 icon="src/Imagenes/6.png";
+            }
+            else if(cont==7)
+                    {
+                         icon="src/Imagenes/7.png";
+                    }   return icon;
         }
     
        
